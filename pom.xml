@@ -57,6 +57,18 @@
 		</plugins>
 	</build>
 
+	<distributionManagement>
+		<repository>
+			<id>muletalks-releases</id>
+			<url>http://34.65.47.116:8081/repository/muletalks-releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>muletalks-snapshots</id>
+			<url>http://34.65.47.116:8081/repository/muletalks-snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+
 	<dependencies>
 		<dependency>
 			<groupId>org.mule.connectors</groupId>
