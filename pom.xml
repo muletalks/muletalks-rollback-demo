@@ -30,6 +30,29 @@
 				<artifactId>mule-maven-plugin</artifactId>
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
+				<configuration>
+					<cloudHubDeployment>
+						<uri>${anypoint.platform.base_uri}</uri>
+						<muleVersion>${app.runtime}</muleVersion>
+						<connectedAppClientId>${anypoint.platform.muletalks.connectedapp.client_id}</connectedAppClientId>
+						<connectedAppClientSecret>${anypoint.platform.muletalks.connectedapp.client_secret}</connectedAppClientSecret>
+						<connectedAppGrantType>client_credentials</connectedAppGrantType>
+						<applicationName>${application.name}</applicationName>
+						<environment>${anypoint.muletalks.env}</environment>
+						<workerType>${anypoint.muletalks.workertype}</workerType>
+						<workers>${anypoint.muletalks.numberofworkers}</workers>
+						<properties>
+							<anypoint.platform.client_secret>${anypoint.platform.muletalks.client_secret}</anypoint.platform.client_secret>
+							<anypoint.platform.client_id>${anypoint.platform.muletalks.client_id}</anypoint.platform.client_id>
+							<anypoint.platform.base_uri>${anypoint.platform.base_uri}</anypoint.platform.base_uri>
+							<anypoint.platform.analytics_base_uri>${anypoint.platform.analytics_base_uri}</anypoint.platform.analytics_base_uri>
+							<anypoint.platform.config.analytics.agent.enabled>true</anypoint.platform.config.analytics.agent.enabled>
+						</properties>
+						<region>${anypoint.muletalks.region}</region>
+						<businessGroup>${anypoint.muletalks.bg}</businessGroup>
+					</cloudHubDeployment>
+					<classifier>mule-application</classifier>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
