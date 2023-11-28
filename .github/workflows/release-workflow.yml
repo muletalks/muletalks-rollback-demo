@@ -1,7 +1,7 @@
 # This is a parent workflow
 # It will trigger the reusable workflow and pass the input parameters to it
 
-name: Build, Test and Deploy to PROD
+name: Build, Test and Deploy to Staging
 
 on:
   # Runs this workflow only manually from the Actions tab with input parameters
@@ -25,13 +25,13 @@ on:
           - '2'
           - '3'
           - '4'
-        default: '2'
+        default: '1'
 
 jobs:
   workflow:
     # Make sure to add the right path to the reusable workflow.
     # {organization}/{repository}/.github/workflows/{workflow_file_name}.yml@{branch}
-    uses: muletalks/reusable-workflows/.github/workflows/prod-reusable-workflow.yml@master
+    uses: muletalks/reusable-workflows/.github/workflows/release-reusable-workflow.yml@master
     secrets: inherit
     with:
       workerType: ${{ inputs.workerType }}
